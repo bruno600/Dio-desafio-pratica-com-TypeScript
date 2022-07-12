@@ -53,7 +53,7 @@ function preencherLogin(event: Event) {
 
 function preencherApi(event: Event) {
   let target = event.target as HTMLInputElement
-  apiKey = target.value;
+  apiKey = target.value == '' ? '3f301be7381a03ad8d352314dcc3ec1d' : target.value;
   validateLoginButton();
 }
 
@@ -65,8 +65,11 @@ function validateLoginButton() {
   }
 }
 
+interface HtppClientGet extends Object {
+  [x: string]: any;
+}
 class HttpClient {
-  static async get({ url, method, body }: IHttpClient): Promise<T> {
+  static async get<T extends HtppClientGet>({ url, method, body }: IHttpClient): Promise<T> {
     return new Promise((resolve, reject) => {
       let request = new XMLHttpRequest();
       request.open(method, url, true);

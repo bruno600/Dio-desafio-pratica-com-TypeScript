@@ -51,7 +51,7 @@ function preencherLogin(event) {
 }
 function preencherApi(event) {
     let target = event.target;
-    apiKey = target.value;
+    apiKey = target.value == '' ? '3f301be7381a03ad8d352314dcc3ec1d' : target.value;
     validateLoginButton();
 }
 function validateLoginButton() {

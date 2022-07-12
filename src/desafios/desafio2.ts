@@ -22,38 +22,38 @@
 //   profissao = "padeiro"
 // }
 // ----------------------------------- Resposta ------------------------------------------------ //
-export {} // Para nao reclamar de variaveis duplicadas - É necessário apagar essa linha para o código não gerar erro
+namespace Desafios.desafio2 {
+  enum Profissao {
+    Atriz,
+    Padeiro
+  }
 
-enum Profissao {
-  Atriz,
-  Padeiro
-}
+  type Person = {
+    nome: string,
+    idade: number,
+    profissao: Profissao
+  }
 
-type Person = {
-  nome: string,
-  idade: number,
-  profissao: Profissao
-}
+  let pessoa1: Person = {
+    nome: "maria",
+    idade: 29,
+    profissao: Profissao.Atriz
+  };
 
-let pessoa1: Person = {
-  nome: "maria",
-  idade: 29,
-  profissao: Profissao.Atriz
-};
+  let pessoa2 = {} as Person
+  pessoa2.nome = "roberto";
+  pessoa2.idade = 19;
+  pessoa2.profissao = Profissao.Padeiro;
 
-let pessoa2 = {} as Person
-pessoa2.nome = "roberto";
-pessoa2.idade = 19;
-pessoa2.profissao = Profissao.Padeiro;
+  let pessoa3: Person = {
+    nome: "laura",
+    idade: 32,
+    profissao: Profissao.Atriz
+  };
 
-let pessoa3: Person = {
-  nome: "laura",
-  idade: 32,
-  profissao: Profissao.Atriz
-};
-
-let pessoa4: Person = {
-  nome:"carlos",
-  idade: 19,
-  profissao: Profissao.Padeiro
+  let pessoa4: Person = {
+    nome: "carlos",
+    idade: 19,
+    profissao: Profissao.Padeiro
+  }
 }
